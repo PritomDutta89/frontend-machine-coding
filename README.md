@@ -1,4 +1,5 @@
 **🚀 Frontend Machine Coding Round - Top Challenges with Solutions**
+
 This repository contains some of the most frequently asked frontend machine coding round questions along with their solutions. The primary focus is on implementing the core logic, keeping the UI minimal and functional.
 
 **🛠 Tech Stack**
