@@ -33,4 +33,5 @@ Component-based structure
 Tailwind for styling
 
 **📬 Feedback & Collaboration**
+
 If you have suggestions or improvements, feel free to create an issue or open a pull request.
