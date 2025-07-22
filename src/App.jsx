@@ -2,6 +2,7 @@ import Accordion from "./accordion/Accordion";
 import SearchBar from "./auto-complete-search/SearchBar";
 import Modal from "./modal/Modal";
 import Tabs from "./tabs/Tabs";
+import Toast from "./toastNotification/Toast";
 
 const App = () => {
   return (
@@ -9,7 +10,8 @@ const App = () => {
       {/* <SearchBar /> */}
       {/* <Modal /> */}
       {/* <Accordion /> */}
-      <Tabs />
+      {/* <Tabs /> */}
+      <Toast />
     </div>
   );
 };
