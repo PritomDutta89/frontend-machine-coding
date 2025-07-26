@@ -31,6 +31,18 @@ const ImageCarousel = () => {
           ▶
         </button>
       </div>
+      {/* dots */}
+      <div className="flex justify-center items-center gap-2">
+        {images.map((_, index) => (
+          <div
+            key={index}
+            className={`flex items-center justify-center w-3 h-3 rounded-full ${
+              current === index ? "bg-red-500" : "bg-red-300"
+            } cursor-pointer`}
+            onClick={() => setCurrent(index)}
+          ></div>
+        ))}
+      </div>
     </div>
   );
 };
