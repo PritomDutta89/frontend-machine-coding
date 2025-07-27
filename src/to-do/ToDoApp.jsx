@@ -55,6 +55,22 @@ const ToDoApp = () => {
     setTasks(updatedTasks);
   };
 
+  const handleUpdate = (id, task) => {
+    const updatedTask = tasks.map((item) => {
+      if (item.id === id) {
+        return {
+          ...item,
+          title: task.title,
+          description: task.description,
+        };
+      }
+
+      return item;
+    });
+
+    setTasks(updatedTask);
+  };
+
   return (
     <>
       <form
@@ -92,13 +108,14 @@ const ToDoApp = () => {
 
       <hr className="mt-[1rem] text-gray-200" />
 
-      <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-[0.8rem] px-4 mt-[1rem]">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-[0.8rem] px-4 mt-[1rem]">
         {tasks.map((item, index) => (
           <TaskItem
             key={index}
             item={item}
             handleDelete={handleDelete}
             handleToggle={handleToggle}
+            handleUpdate={handleUpdate}
           />
         ))}
       </div>
