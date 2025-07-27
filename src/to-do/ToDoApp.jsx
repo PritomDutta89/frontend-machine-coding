@@ -3,14 +3,20 @@ import TaskItem from "./TaskItem";
 
 const ToDoApp = () => {
   const [toDo, setToDo] = useState({
+    id: 0,
     title: "",
     description: "",
+    complete: false,
     date: Date.now,
   });
   const [tasks, setTasks] = useState([]);
 
   const setData = (e) => {
-    setToDo((prv) => ({ ...prv, [e.target.name]: e.target.value }));
+    setToDo((prv) => ({
+      ...prv,
+      id: tasks.length + 1,
+      [e.target.name]: e.target.value,
+    }));
   };
 
   const addData = (e) => {
@@ -19,8 +25,14 @@ const ToDoApp = () => {
     setToDo({
       title: "",
       description: "",
+      complete: false,
       date: Date.now,
     });
+  };
+
+  const handleDelete = (id) => {
+    const filteredData = tasks.filter((item) => item.id !== id);
+    setTasks(filteredData);
   };
 
   const handleKey = (e) => {
@@ -28,6 +40,19 @@ const ToDoApp = () => {
     if (e.key === "Enter") {
       addData();
     }
+  };
+
+  const handleToggle = (id) => {
+    const updatedTasks = tasks.map((item) => {
+      if (item.id === id) {
+        return {
+          ...item,
+          complete: !item.complete,
+        };
+      }
+      return item;
+    });
+    setTasks(updatedTasks);
   };
 
   return (
@@ -67,9 +92,14 @@ const ToDoApp = () => {
 
       <hr className="mt-[1rem] text-gray-200" />
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-[0.8rem] px-4 mt-[1rem]">
+      <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-[0.8rem] px-4 mt-[1rem]">
         {tasks.map((item, index) => (
-          <TaskItem key={index} item={item} />
+          <TaskItem
+            key={index}
+            item={item}
+            handleDelete={handleDelete}
+            handleToggle={handleToggle}
+          />
         ))}
       </div>
     </>
