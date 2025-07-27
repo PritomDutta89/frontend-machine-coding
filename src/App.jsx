@@ -5,6 +5,7 @@ import InfiniteScroll from "./infinite-scroll/InfiniteScroll";
 import Modal from "./modal/Modal";
 import Pagination from "./pagination/Pagination";
 import Tabs from "./tabs/Tabs";
+import ToDoApp from "./to-do/ToDoApp";
 import Toast from "./toastNotification/Toast";
 
 const App = () => {
@@ -17,7 +18,8 @@ const App = () => {
       {/* <Toast /> */}
       {/* <InfiniteScroll /> */}
       {/* <Pagination /> */}
-      <ImageCarousel />
+      {/* <ImageCarousel /> */}
+      <ToDoApp />
     </div>
   );
 };
