@@ -8,9 +8,7 @@ const SearchBar = () => {
   const [activeIndex, setActiveIndex] = useState(-1);
 
   useEffect(() => {
-    console.log("starting1");
     const timer = setTimeout(() => {
-      console.log("starting2");
       if (text) {
         const updatedData = data.filter((item) => {
           return item.toLowerCase().includes(text.toLowerCase());
@@ -22,7 +20,6 @@ const SearchBar = () => {
     }, 300);
 
     return () => {
-      console.log("starting3");
       clearTimeout(timer);
     };
   }, [text]);
