@@ -48,13 +48,12 @@ const InfiniteScroll = () => {
       </h1>
       <div className="flex items-center justify-center flex-col gap-[1rem]">
         {visibleData?.map((item, index) => (
-          <div className="bg-amber-300 p-3 flex flex-col">
+          <div key={index} className="bg-amber-300 p-3 flex flex-col">
             <p>Id: {item?.id}</p>
             <p>title: {item?.title}</p>
           </div>
         ))}
       </div>
-
       {!hasMore && <div>No data available</div>}
     </div>
   );
