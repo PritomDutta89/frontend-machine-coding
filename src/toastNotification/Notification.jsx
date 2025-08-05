@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 const Notification = ({ onClose }) => {
   useEffect(() => {
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       onClose();
     }, 2000);
   }, []);

@@ -54,6 +54,7 @@ const InfiniteScroll = () => {
           </div>
         ))}
       </div>
+
       {!hasMore && <div>No data available</div>}
     </div>
   );
