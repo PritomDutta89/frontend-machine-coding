@@ -25,7 +25,6 @@ const SearchBar = () => {
   }, [text]);
 
   const handleKeyDown = (e) => {
-    console.log(e);
     if (e.key === "ArrowDown") {
       setActiveIndex((prv) => Math.min(prv + 1, filteredData.length - 1));
     } else if (e.key === "ArrowUp") {
