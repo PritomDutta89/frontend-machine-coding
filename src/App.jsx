@@ -1,6 +1,7 @@
 import Accordion from "./accordion/Accordion";
 import SearchBar from "./auto-complete-search/SearchBar";
 import ImageCarousel from "./image-carousel/ImageCarousel";
+import ImageLazyLoading from "./image-lazy-loading/ImageLazyLoading";
 import InfiniteScroll from "./infinite-scroll/InfiniteScroll";
 import Modal from "./modal/Modal";
 import Pagination from "./pagination/Pagination";
@@ -18,7 +19,8 @@ const App = () => {
       {/* <InfiniteScroll /> */}
       {/* <Pagination /> */}
       {/* <ImageCarousel /> */}
-      <ToDoApp />
+      {/* <ToDoApp /> */}
+      <ImageLazyLoading />
     </div>
   );
 };
